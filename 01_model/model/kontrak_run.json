@@ -1,0 +1,92 @@
+{
+  "sampling": {
+    "metode": "pengulangan_tetap_per_sumber",
+    "responden_repeat": 3,
+    "jumlah_citra_unik_latih": 1257,
+    "pemakaian_citra_per_epoch": {
+      "responden": 351,
+      "kaggle": 1140
+    },
+    "jumlah_langkah_per_epoch": 1491,
+    "paparan_instance_per_epoch": {
+      "0": 192,
+      "1": 216,
+      "2": 84,
+      "3": 249,
+      "4": 102,
+      "5": 159,
+      "6": 147,
+      "7": 126,
+      "8": 72,
+      "9": 120,
+      "10": 87,
+      "11": 156,
+      "12": 84,
+      "13": 138,
+      "14": 147,
+      "15": 75,
+      "16": 84,
+      "17": 108,
+      "18": 99,
+      "19": 138,
+      "20": 279,
+      "21": 237,
+      "22": 198,
+      "23": 177,
+      "24": 213
+    },
+    "catatan": "Pengulangan bukan penambahan citra atau penulis independen."
+  },
+  "eksperimen": "split_penulis_baru_koreksi_audit",
+  "smoke": false,
+  "pengaturan": {
+    "seed": 231402111,
+    "short_edge": 800,
+    "long_edge": 1333,
+    "rotation_degrees": 10.0,
+    "scale_range": [
+      0.8,
+      1.2
+    ],
+    "brightness_range": [
+      0.9,
+      1.1
+    ],
+    "contrast_range": [
+      0.9,
+      1.1
+    ],
+    "geometry_max_attempts": 8,
+    "backbone_depth": 50,
+    "ap_score_threshold": 0.05,
+    "nms_threshold": 0.5,
+    "max_detections": 100,
+    "epochs": 30,
+    "learning_rate": 0.00025,
+    "momentum": 0.9,
+    "weight_decay": 0.0001,
+    "warmup_steps": 320,
+    "lr_milestone_epochs": [
+      20,
+      27
+    ],
+    "lr_gamma": 0.1,
+    "amp": true,
+    "amp_max_attempts": 8,
+    "responden_repeat": 3
+  },
+  "jumlah_citra": [
+    1491,
+    147
+  ],
+  "sha256_coco": {
+    "train": "b6ac8cf8747fab8f1be73d8c73b575ea0d16e2471501cb40b149e565fb020037",
+    "validation": "ad9331373ff51bc4e6c846b3b66af2ebd66a15fa5eebdfbeec03269a3d464c93"
+  },
+  "sha256_kode": {
+    "train_Aksarabataktoba.py": "96201005489a2c82524112c00ce3a26f6f6ae8ee95196a5e937925741438ca59",
+    "dataset_coco.py": "5925ea223e75ab2916c91da30b5c774c10206aa372251edd9d9969299012fffd",
+    "resize_augmentasi.py": "1efe2d0df9dbb4f8659e5c6e536d7a9c733d1b5a506b6331ca15e440100a9252",
+    "normalisasi_model.py": "d8f9da7ec5258195bbc94e3e147459d63ddaef247e3717be2567dd05ea68f358"
+  }
+}

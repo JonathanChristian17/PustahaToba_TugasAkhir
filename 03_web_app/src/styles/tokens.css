@@ -1,0 +1,96 @@
+:root,
+[data-theme="light"] {
+  /* Palet Terpadu Adat Batak Toba (Primary: Marun Ulos | Secondary: Ivory Pustaha | Accent: Emas Tenun) */
+  --primary: #6B141A;
+  --primary-deep: #4A0D12;
+  --primary-ink: #1C1414;
+  --secondary: #FAF6EE;
+  --secondary-card: #FFFFFF;
+  --secondary-subtle: #F1E9DA;
+
+  --bg-page: var(--secondary);
+  --bg-surface: var(--secondary-card);
+  --bg-subtle: var(--secondary-subtle);
+  --bg-canvas: #F5EFE2;
+  --bg-night: var(--primary-deep);
+  --bg-night-card: #5B1016;
+
+  --text-primary: var(--primary-ink);
+  --text-secondary: #534443;
+  --text-night: #FAF6EE;
+  --text-night-muted: #E9DBD2;
+
+  --border-subtle: #E2D6C3;
+  --border-control: #856D68;
+  --border-night: #7B2229;
+
+  --accent: #C87A19;
+  --accent-bright: #F2B45A;
+  --accent-wash: #F8E5C2;
+  --accent-soft: #FBF1E3;
+  --accent-text: #6B141A;
+  --accent-ink: #FAF6EE;
+
+  --status-ok: #1F5E43;
+  --status-ok-soft: #E5F3EC;
+  --status-warn: #7A4B08;
+  --status-warn-soft: #FDF2E2;
+  --status-err: #8F1D1E;
+  --status-err-soft: #FCEBEC;
+
+  --shadow-card: 0 2px 6px rgba(74, 13, 18, 0.06), 0 14px 34px -14px rgba(74, 13, 18, 0.12);
+  --shadow-float: 0 12px 32px -10px rgba(74, 13, 18, 0.24);
+
+  --font-sans: 'Figtree', system-ui, -apple-system, sans-serif;
+  --font-display: 'Young Serif', 'Newsreader', Georgia, serif;
+  --font-serif: 'Newsreader', Georgia, serif;
+  --font-mono: 'DM Mono', ui-monospace, monospace;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-theme="dark"] {
+  --primary: #B8323B;
+  --primary-deep: #140708;
+  --primary-ink: #FAF6EE;
+  --secondary: #140708;
+  --secondary-card: #210D10;
+  --secondary-subtle: #301317;
+
+  --bg-page: #140708;
+  --bg-surface: #210D10;
+  --bg-subtle: #301317;
+  --bg-canvas: #1B0A0C;
+  --bg-night: #0E0405;
+  --bg-night-card: #210D10;
+
+  --text-primary: #FAF6EE;
+  --text-secondary: #DFCFC8;
+  --text-night: #FAF6EE;
+  --text-night-muted: #DFCFC8;
+
+  --border-subtle: #4D1F25;
+  --border-control: #9E6F72;
+  --border-night: #4D1F25;
+
+  --accent: #F2B45A;
+  --accent-bright: #F2B45A;
+  --accent-wash: rgba(242, 180, 90, 0.26);
+  --accent-soft: #391D14;
+  --accent-text: #F2B45A;
+  --accent-ink: #1C1414;
+
+  --status-ok: #6FCF97;
+  --status-ok-soft: #172E22;
+  --status-warn: #F2B45A;
+  --status-warn-soft: #391D14;
+  --status-err: #F87171;
+  --status-err-soft: #3B1416;
+
+  --shadow-card: 0 4px 14px rgba(0, 0, 0, 0.42), 0 18px 36px -14px rgba(0, 0, 0, 0.55);
+  --shadow-float: 0 14px 36px rgba(0, 0, 0, 0.62);
+}

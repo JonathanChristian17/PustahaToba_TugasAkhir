@@ -1,0 +1,15 @@
+{
+  "model": "Mask R-CNN ResNet-50-FPN",
+  "training_epochs": 30,
+  "selected_epoch": 28,
+  "validation_AP": 68.34013030818518,
+  "checkpoint_sha256": "5d964b6e0f56f14901351933272f0ffb2ee6d6b085213fadd3f8406ffa4221c2",
+  "contract_sha256": "5a1c23d428f26d6082522b7d68f301aac0a20927a9976a47f64d565da78f404a",
+  "artifact_sha256": {
+    "model/kontrak_run.json": "5a1c23d428f26d6082522b7d68f301aac0a20927a9976a47f64d565da78f404a",
+    "model/riwayat.json": "42fcd0a55372f2181049bf55d7b712f0dfd04afb8883fe8ace9db5297cbdabdf",
+    "model/class_map.json": "650fc49b99feb99e45c01d8fb2eb7ad33f513582172ff4c27bd1330194a79b5a",
+    "model/kode/normalisasi_model.py": "d8f9da7ec5258195bbc94e3e147459d63ddaef247e3717be2567dd05ea68f358",
+    "model/kode/resize_augmentasi.py": "1efe2d0df9dbb4f8659e5c6e536d7a9c733d1b5a506b6331ca15e440100a9252"
+  }
+}

@@ -1,0 +1,22 @@
+# Bobot model >100 MB (simpan di GitHub Releases)
+*.pth
+*.pt
+*.ckpt
+
+# Python & virtual environment
+__pycache__/
+*.py[cod]
+.venv/
+.venv-web/
+venv/
+
+# Node & build output
+node_modules/
+03_web_app/dist/
+dist/
+
+# Arsip, log, & OS
+*.zip
+*.log
+.DS_Store
+Thumbs.db

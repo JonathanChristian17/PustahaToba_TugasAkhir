@@ -1,0 +1,191 @@
+{
+  "version": "0.1.3-toba-h-k",
+  "language": "batak_toba",
+  "status": "DEVELOPMENT_RULES_NOT_INDEPENDENTLY_VALIDATED",
+  "source_class_map_sha256": "650fc49b99feb99e45c01d8fb2eb7ad33f513582172ff4c27bd1330194a79b5a",
+  "policy": {
+    "word_segmentation": "not_implemented",
+    "geometry_pairing": "implemented_in_susun_prediksi; bbox_based_development",
+    "phonetic_normalization": "contextual_intervocalic_glides_only_in_susun_prediksi",
+    "wa_ya": "preserve_literal; optional_contextual_spelling_trace_in_arranged_output",
+    "final_ha": "k_when_closed_by_pangolat; h_in_onset",
+    "onset_ha": "h_with_inherent_or_marked_vowel; no_automatic_h_to_k_dictionary_replacement",
+    "ambiguous": "[?]"
+  },
+  "references": [
+    "https://unicode.org/versions/Unicode16.0.0/core-spec/chapter-17/",
+    "https://aksara-batak.com/lessons/toba-6/",
+    "https://aksara-batak.com/lessons/pelajaran-6/",
+    "https://aksara-batak.com/lessons/pelajaran-5/"
+  ],
+  "classes": [
+    {
+      "id": 0,
+      "name": "ina_a",
+      "kind": "independent_vowel",
+      "latin": "a",
+      "onset": ""
+    },
+    {
+      "id": 1,
+      "name": "ina_ha",
+      "kind": "consonant",
+      "latin": "ha",
+      "onset": "h"
+    },
+    {
+      "id": 2,
+      "name": "ina_ma",
+      "kind": "consonant",
+      "latin": "ma",
+      "onset": "m"
+    },
+    {
+      "id": 3,
+      "name": "ina_na",
+      "kind": "consonant",
+      "latin": "na",
+      "onset": "n"
+    },
+    {
+      "id": 4,
+      "name": "ina_ra",
+      "kind": "consonant",
+      "latin": "ra",
+      "onset": "r"
+    },
+    {
+      "id": 5,
+      "name": "ina_ta",
+      "kind": "consonant",
+      "latin": "ta",
+      "onset": "t"
+    },
+    {
+      "id": 6,
+      "name": "ina_ba",
+      "kind": "consonant",
+      "latin": "ba",
+      "onset": "b"
+    },
+    {
+      "id": 7,
+      "name": "ina_pa",
+      "kind": "consonant",
+      "latin": "pa",
+      "onset": "p"
+    },
+    {
+      "id": 8,
+      "name": "ina_wa",
+      "kind": "consonant",
+      "latin": "wa",
+      "onset": "w"
+    },
+    {
+      "id": 9,
+      "name": "ina_ga",
+      "kind": "consonant",
+      "latin": "ga",
+      "onset": "g"
+    },
+    {
+      "id": 10,
+      "name": "ina_ja",
+      "kind": "consonant",
+      "latin": "ja",
+      "onset": "j"
+    },
+    {
+      "id": 11,
+      "name": "ina_da",
+      "kind": "consonant",
+      "latin": "da",
+      "onset": "d"
+    },
+    {
+      "id": 12,
+      "name": "ina_nga",
+      "kind": "consonant",
+      "latin": "nga",
+      "onset": "ng"
+    },
+    {
+      "id": 13,
+      "name": "ina_la",
+      "kind": "consonant",
+      "latin": "la",
+      "onset": "l"
+    },
+    {
+      "id": 14,
+      "name": "ina_sa",
+      "kind": "consonant",
+      "latin": "sa",
+      "onset": "s"
+    },
+    {
+      "id": 15,
+      "name": "ina_ya",
+      "kind": "consonant",
+      "latin": "ya",
+      "onset": "y"
+    },
+    {
+      "id": 16,
+      "name": "ina_nya",
+      "kind": "consonant",
+      "latin": "nya",
+      "onset": "ny"
+    },
+    {
+      "id": 17,
+      "name": "ina_i",
+      "kind": "independent_vowel",
+      "latin": "i",
+      "onset": ""
+    },
+    {
+      "id": 18,
+      "name": "ina_u",
+      "kind": "independent_vowel",
+      "latin": "u",
+      "onset": ""
+    },
+    {
+      "id": 19,
+      "name": "anak_hatadingan",
+      "kind": "vowel_sign",
+      "vowel": "e"
+    },
+    {
+      "id": 20,
+      "name": "anak_hauluan",
+      "kind": "vowel_sign",
+      "vowel": "i"
+    },
+    {
+      "id": 21,
+      "name": "anak_sihora",
+      "kind": "vowel_sign",
+      "vowel": "o"
+    },
+    {
+      "id": 22,
+      "name": "anak_haborotan",
+      "kind": "vowel_sign",
+      "vowel": "u"
+    },
+    {
+      "id": 23,
+      "name": "anak_haminsaran",
+      "kind": "final_ng",
+      "latin": "ng"
+    },
+    {
+      "id": 24,
+      "name": "anak_pangolat",
+      "kind": "killer"
+    }
+  ]
+}

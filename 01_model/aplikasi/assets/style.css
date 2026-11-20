@@ -1,0 +1,420 @@
+:root {
+  color-scheme: light;
+  --bg-app: #e6edf4;
+  --surface-card: #ffffff;
+  --surface-muted: #f8fafc;
+  --ink-primary: #0f172a;
+  --ink-secondary: #334155;
+  --ink-muted: #64748b;
+  --accent-primary: #0f172a;
+  --accent-blue: #2563eb;
+  --accent-live: #10b981;
+  --border-card: #94a3b8;
+  --border-subtle: #cbd5e1;
+  --border-dark: #0f172a;
+}
+
+/* Latar belakang solid tanpa pola titik dengan kontras tinggi */
+.stApp {
+  background-color: var(--bg-app);
+  color: var(--ink-primary);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Sembunyikan header default, status running ganda, dan sidebar */
+.stAppHeader, [data-testid="stHeader"], [data-testid="stSidebar"], footer {
+  display: none !important;
+  height: 0 !important;
+}
+
+/* Hapus indikator loading duplikat (hanya sisakan progress bar di toolbar) */
+[data-testid="stStatusWidget"], [data-testid="stStatusWidget"] * {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+[data-testid="stElementToolbar"] { display: none !important; }
+
+/* Komponen tersembunyi (lightbox helper) tanpa memakan ruang vertikal */
+iframe[data-testid="stCustomComponentV1"],
+[data-testid="element-container"]:has(iframe[data-testid="stCustomComponentV1"]) {
+  display: none !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Penataan ruang vertikal container utama */
+.stMainBlockContainer {
+  max-width: 2200px;
+  padding-top: 0.8rem !important;
+  padding-left: 1.8rem !important;
+  padding-right: 1.8rem !important;
+  padding-bottom: 1.2rem !important;
+}
+
+/* Hapus hyperlink / anchor link di samping judul dan heading */
+h1 a, h2 a, h3 a,
+[data-testid="stHeaderActionElements"],
+[data-testid="stHeaderActionElements"] a,
+.header-anchor,
+a.header-anchor {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* 1. Jarak Judul, Subjudul, dan Status Model (Lebih Bernafas & Tidak Rapat) */
+h1 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+  font-size: clamp(1.6rem, 2.1vw, 2.2rem) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  margin: 0 !important;
+  padding: 0 0 0.45rem 0 !important;
+  color: var(--ink-primary);
+}
+
+.app-subtitle {
+  margin: 0 0 0.65rem 0 !important;
+  font-size: 1.05rem;
+  line-height: 1.45;
+  color: var(--ink-muted);
+  font-weight: 500;
+}
+
+.model-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface-card);
+  border: 1px solid var(--border-card);
+  color: var(--ink-secondary);
+  padding: 5px 14px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+  margin: 0.2rem 0 1.1rem 0 !important;
+}
+
+.model-line::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--accent-live);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+}
+
+[data-testid="stVerticalBlock"] { gap: 0.65rem; }
+
+/* 2. Rapatkan Jarak Caption ("Belum ada citra dipilih") ke Panel Citra */
+[data-testid="stCaptionContainer"] {
+  color: var(--ink-muted);
+  font-size: 0.885rem;
+  font-weight: 500;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  line-height: 1.2 !important;
+}
+
+/* Tarik panel citra masukan & mask langsung ke atas mendekati caption secara rapat */
+div[data-testid="element-container"]:has([data-testid="stCaptionContainer"]) {
+  margin-bottom: -0.85rem !important;
+  padding-bottom: 0 !important;
+}
+
+div[data-testid="stHorizontalBlock"]:has(.desktop-panel-label) {
+  margin-top: -0.4rem !important;
+  padding-top: 0 !important;
+}
+
+/* Tombol & Aksi */
+.stButton button, [data-testid="stFileUploaderDropzone"] button {
+  border-radius: 4px;
+  border: 1.5px solid var(--border-card);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+  background: var(--surface-card);
+  color: var(--ink-primary);
+  min-height: 48px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.15s ease-in-out;
+}
+
+.stButton button:hover:not(:disabled), [data-testid="stFileUploaderDropzone"] button:hover {
+  border-color: var(--border-dark);
+  color: var(--ink-primary);
+  box-shadow: 0 3px 6px -1px rgba(15, 23, 42, 0.12);
+  transform: translateY(-1px);
+}
+
+.stButton button:active:not(:disabled), [data-testid="stFileUploaderDropzone"] button:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08);
+}
+
+/* Tombol Utama: Proses Citra */
+div[data-testid="stHorizontalBlock"]:first-of-type > div[data-testid="stColumn"]:nth-child(2) button:not(:disabled) {
+  background: var(--ink-primary) !important;
+  color: #ffffff !important;
+  border-color: var(--ink-primary) !important;
+  box-shadow: 0 2px 5px rgba(15, 23, 42, 0.2);
+}
+
+div[data-testid="stHorizontalBlock"]:first-of-type > div[data-testid="stColumn"]:nth-child(2) button:not(:disabled):hover {
+  background: #1e293b !important;
+  border-color: #1e293b !important;
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.3);
+}
+
+.stButton button:disabled {
+  background: #cbd5e1;
+  border-color: #94a3b8;
+  color: #64748b;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.stButton button:focus-visible, [data-testid="stFileUploaderDropzone"] button:focus-visible {
+  outline: 2px solid var(--border-dark);
+  outline-offset: 2px;
+}
+
+[data-testid="stFileUploaderDropzone"] {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  min-height: 48px;
+}
+
+[data-testid="stFileUploaderDropzone"] > span {
+  display: block;
+  width: 100%;
+}
+
+[data-testid="stFileUploader"] > div:last-child { display: none; }
+[data-testid="stFileUploaderDropzoneInstructions"],
+[data-testid="stFileUploaderFile"],
+[data-testid="stFileUploaderPagination"] { display: none !important; }
+
+[data-testid="stFileUploaderDropzone"] button {
+  font-size: 0 !important;
+  width: 100%;
+  margin: 0;
+}
+
+[data-testid="stFileUploaderDropzone"] button::after {
+  content: "1  Pilih citra";
+  font-size: 0.95rem;
+}
+
+/* Indikator Progres Utama - Pastikan HANYA 1 bar tunggal (Hapus mutlak bar atas yang berlebih) */
+[data-testid="stProgress"] {
+  margin-left: 0.7rem;
+}
+
+/* Sembunyikan bar atas jika ada 2 bar yang muncul bertumpuk */
+[data-testid="stProgress"] > div:first-child:not(:only-child),
+[data-testid="stProgress"] > div > div:first-child:not(:only-child) {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Pastikan hanya bar utama tunggal yang aktif */
+[data-testid="stProgress"] div[role="progressbar"],
+[data-testid="stProgress"] > div:only-child,
+[data-testid="stProgress"] > div:last-child {
+  background-color: #cbd5e1 !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 9999px !important;
+  height: 8px !important;
+  overflow: hidden !important;
+}
+
+[data-testid="stProgress"] div[role="progressbar"] > div,
+[data-testid="stProgress"] > div:only-child > div,
+[data-testid="stProgress"] > div:last-child > div {
+  background-color: var(--ink-primary) !important;
+  border-radius: 9999px !important;
+  height: 100% !important;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Header Panel Citra */
+.desktop-panel-label, .mobile-panel-label {
+  display: inline-flex;
+  align-items: center;
+  background: var(--surface-card);
+  color: var(--ink-primary) !important;
+  font-size: 0.8rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em;
+  padding: 5px 12px !important;
+  border-radius: 4px;
+  margin: 0 !important;
+  border: 1px solid var(--border-card);
+  border-left: 4px solid var(--ink-primary);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+}
+
+/* 4. Konsistensi Warna Selectbox: Mask + Bbox / Mask saja / Bbox saja */
+[data-testid="stSelectbox"] {
+  margin-bottom: 0 !important;
+}
+
+/* Hilangkan garis tepi dalam yang bertumpuk agar tidak berkesan terlalu banyak kotak */
+[data-testid="stSelectbox"] [data-baseweb="select"] * {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+
+[data-testid="stSelectbox"] [data-baseweb="select"] > div {
+  border-radius: 4px !important;
+  border: 1.5px solid var(--border-card) !important;
+  background-color: #ffffff !important;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06) !important;
+  font-weight: 600 !important;
+  color: var(--ink-primary) !important;
+  transition: border-color 0.15s ease !important;
+}
+
+[data-testid="stSelectbox"] [data-baseweb="select"] > div:hover {
+  border-color: var(--border-dark) !important;
+}
+
+/* Popover / Dropdown Menu Opsi Selectbox */
+div[data-baseweb="popover"],
+div[data-baseweb="popover"] > div,
+div[data-baseweb="menu"],
+ul[role="listbox"],
+ul[data-baseweb="menu"] {
+  background-color: #ffffff !important;
+  border: 1.5px solid var(--border-card) !important;
+  border-radius: 4px !important;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.15) !important;
+  color: var(--ink-primary) !important;
+  padding: 4px !important;
+}
+
+li[role="option"],
+li[data-baseweb="menu-item"] {
+  background-color: #ffffff !important;
+  color: var(--ink-primary) !important;
+  border-radius: 3px !important;
+  font-weight: 500 !important;
+  padding: 8px 12px !important;
+  transition: background-color 0.12s ease !important;
+}
+
+li[role="option"]:hover,
+li[data-baseweb="menu-item"]:hover,
+li[role="option"][aria-selected="true"],
+li[data-baseweb="menu-item"][aria-selected="true"] {
+  background-color: #f1f5f9 !important;
+  color: var(--accent-blue) !important;
+  font-weight: 600 !important;
+}
+
+/* Bingkai Panel Citra Masukan & Mask dengan Fitur Maximize */
+[data-testid="stImage"] {
+  background: var(--surface-card);
+  border: 1.5px solid var(--border-card);
+  border-radius: 6px;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
+  overflow: hidden;
+  position: relative;
+  cursor: zoom-in !important;
+  transition: all 0.2s ease;
+}
+
+[data-testid="stImage"]:hover {
+  border-color: var(--border-dark);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.12);
+}
+
+[data-testid="stImage"] img {
+  cursor: zoom-in !important;
+  display: block;
+}
+
+/* Indikator Hover Interaktif untuk Maximize - Ikon Standar Monokrom Bersih */
+[data-testid="stImage"]::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  background-color: rgba(15, 23, 42, 0.85);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='15 3 21 3 21 9'/%3E%3Cpolyline points='9 21 3 21 3 15'/%3E%3Cline x1='21' y1='3' x2='14' y2='10'/%3E%3Cline x1='3' y1='21' x2='10' y2='14'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 4px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  z-index: 10;
+}
+
+[data-testid="stImage"]:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 3. Keterangan Jumlah Instansi - Bersih tanpa kotak ganda */
+.count-line {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink-primary);
+  margin-top: 0.8rem !important;
+  margin-bottom: 0.45rem !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.mobile-panel-label { display: none; }
+
+/* 4. Tabel Dataframe - Kembalikan visibilitas teks & data secara utuh */
+[data-testid="stDataFrame"] {
+  border: 1.5px solid var(--border-card) !important;
+  border-radius: 6px !important;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08) !important;
+  overflow: hidden !important;
+}
+
+[data-testid="stCaptionContainer"] {
+  color: var(--ink-muted);
+  font-size: 0.885rem;
+  font-weight: 500;
+}
+
+@media(max-width: 767px) {
+  .stMainBlockContainer { padding: 0.8rem 0.6rem; }
+  [data-testid="stHorizontalBlock"] { flex-wrap: wrap; gap: 0.4rem; }
+  [data-testid="stColumn"] { min-width: 0 !important; flex-basis: 100% !important; width: 100% !important; }
+  [data-testid="stProgress"] { margin-left: 0; }
+  .desktop-panel-label { display: none; }
+  .mobile-panel-label { display: block; }
+}

@@ -1,0 +1,102 @@
+[
+  {
+    "id": 0,
+    "name": "ina_a"
+  },
+  {
+    "id": 1,
+    "name": "ina_ha"
+  },
+  {
+    "id": 2,
+    "name": "ina_ma"
+  },
+  {
+    "id": 3,
+    "name": "ina_na"
+  },
+  {
+    "id": 4,
+    "name": "ina_ra"
+  },
+  {
+    "id": 5,
+    "name": "ina_ta"
+  },
+  {
+    "id": 6,
+    "name": "ina_ba"
+  },
+  {
+    "id": 7,
+    "name": "ina_pa"
+  },
+  {
+    "id": 8,
+    "name": "ina_wa"
+  },
+  {
+    "id": 9,
+    "name": "ina_ga"
+  },
+  {
+    "id": 10,
+    "name": "ina_ja"
+  },
+  {
+    "id": 11,
+    "name": "ina_da"
+  },
+  {
+    "id": 12,
+    "name": "ina_nga"
+  },
+  {
+    "id": 13,
+    "name": "ina_la"
+  },
+  {
+    "id": 14,
+    "name": "ina_sa"
+  },
+  {
+    "id": 15,
+    "name": "ina_ya"
+  },
+  {
+    "id": 16,
+    "name": "ina_nya"
+  },
+  {
+    "id": 17,
+    "name": "ina_i"
+  },
+  {
+    "id": 18,
+    "name": "ina_u"
+  },
+  {
+    "id": 19,
+    "name": "anak_hatadingan"
+  },
+  {
+    "id": 20,
+    "name": "anak_hauluan"
+  },
+  {
+    "id": 21,
+    "name": "anak_sihora"
+  },
+  {
+    "id": 22,
+    "name": "anak_haborotan"
+  },
+  {
+    "id": 23,
+    "name": "anak_haminsaran"
+  },
+  {
+    "id": 24,
+    "name": "anak_pangolat"
+  }
+]

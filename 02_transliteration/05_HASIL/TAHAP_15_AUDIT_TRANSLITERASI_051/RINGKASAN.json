@@ -1,0 +1,986 @@
+{
+  "version": "0.5.1-composite-ina-and-mask-sign-conflicts",
+  "images": 131,
+  "changed": [
+    {
+      "image_id": 4,
+      "file": "citra/responden/P07/P07_N04_004.png",
+      "before": "[?]la[?][?]",
+      "after": "unglos",
+      "display": "unglos",
+      "unresolved_units": []
+    },
+    {
+      "image_id": 43,
+      "file": "citra/responden/P10/P10_N12_012.png",
+      "before": "dongen",
+      "after": "dongan",
+      "display": "dongan",
+      "unresolved_units": []
+    },
+    {
+      "image_id": 70,
+      "file": "citra/responden/P08/P08_C009_F02_25-27.png",
+      "before": "rohanadenggen\n[?]nianggi\npodanadagan",
+      "after": "rohanadenggan\nu[?]nianggi\npodanadagan",
+      "display": "rohanadenggan\nu⟦belum terbaca⟧nianggi\npodanadagan",
+      "unresolved_units": [
+        {
+          "line_number": 2,
+          "unit_number": 2,
+          "source_instance_ids": [
+            9,
+            16,
+            29,
+            30
+          ],
+          "reasons": [
+            "Pangolat dan tanda lain perlu pemisahan kelompok suku kata."
+          ],
+          "pending_sign_ids": []
+        }
+      ]
+    }
+  ],
+  "role_groups": [
+    {
+      "image_id": 8,
+      "representative_id": 3,
+      "instance_ids": [
+        3,
+        4
+      ],
+      "selected_instance_id": 3,
+      "selection_status": "SELECTED_FOR_READING_ONLY",
+      "grouping_scope": "SHARED_MASK_ROLE_HYPOTHESIS; not verified physical identity",
+      "grouping_evidence": [
+        {
+          "instance_ids": [
+            3,
+            4
+          ],
+          "bbox_iou": 0.9084629369321849,
+          "mask_iou": 0.918241577649959,
+          "mask_intersection": 2235,
+          "mask_areas": [
+            2305,
+            2364
+          ]
+        }
+      ],
+      "alternatives": [
+        {
+          "instance_id": 3,
+          "class_label": "anak_sihora",
+          "category_id": 21,
+          "score": 0.8471259474754333,
+          "bbox_xyxy": [
+            205.07711791992188,
+            50.45048522949219,
+            284.0390930175781,
+            169.9718780517578
+          ]
+        },
+        {
+          "instance_id": 4,
+          "class_label": "ina_ta",
+          "category_id": 5,
+          "score": 0.827129602432251,
+          "bbox_xyxy": [
+            202.31800842285156,
+            54.826622009277344,
+            282.705078125,
+            168.9585418701172
+          ]
+        }
+      ]
+    },
+    {
+      "image_id": 35,
+      "representative_id": 5,
+      "instance_ids": [
+        5,
+        6
+      ],
+      "selected_instance_id": 5,
+      "selection_status": "SELECTED_FOR_READING_ONLY",
+      "grouping_scope": "SHARED_MASK_ROLE_HYPOTHESIS; not verified physical identity",
+      "grouping_evidence": [
+        {
+          "instance_ids": [
+            5,
+            6
+          ],
+          "bbox_iou": 0.9386439588297562,
+          "mask_iou": 0.9491373801916932,
+          "mask_intersection": 7427,
+          "mask_areas": [
+            7566,
+            7686
+          ]
+        }
+      ],
+      "alternatives": [
+        {
+          "instance_id": 5,
+          "class_label": "ina_sa",
+          "category_id": 14,
+          "score": 0.961409866809845,
+          "bbox_xyxy": [
+            752.714599609375,
+            63.516231536865234,
+            926.5657958984375,
+            196.6144561767578
+          ]
+        },
+        {
+          "instance_id": 6,
+          "class_label": "anak_sihora",
+          "category_id": 21,
+          "score": 0.5463796257972717,
+          "bbox_xyxy": [
+            753.0194702148438,
+            62.710166931152344,
+            929.0865478515625,
+            202.24798583984375
+          ]
+        }
+      ]
+    },
+    {
+      "image_id": 43,
+      "representative_id": 4,
+      "instance_ids": [
+        4,
+        5
+      ],
+      "selected_instance_id": 4,
+      "selection_status": "SELECTED_FOR_READING_ONLY",
+      "grouping_scope": "SHARED_MASK_ROLE_HYPOTHESIS; not verified physical identity",
+      "grouping_evidence": [
+        {
+          "instance_ids": [
+            4,
+            5
+          ],
+          "rule": "CONTAINED_ANAK_IN_INA_MASK",
+          "bbox_iou": 0.25193588591860705,
+          "bbox_containment": 1.0,
+          "mask_containment": 0.961324909056098,
+          "mask_iou": 0.2937459778856842,
+          "mask_intersection": 5021,
+          "mask_areas": [
+            16891,
+            5223
+          ]
+        }
+      ],
+      "alternatives": [
+        {
+          "instance_id": 4,
+          "class_label": "ina_na",
+          "category_id": 3,
+          "score": 0.9880220890045166,
+          "bbox_xyxy": [
+            629.1533813476562,
+            76.69671630859375,
+            894.7586669921875,
+            230.23654174804688
+          ]
+        },
+        {
+          "instance_id": 5,
+          "class_label": "anak_hatadingan",
+          "category_id": 19,
+          "score": 0.8901968598365784,
+          "bbox_xyxy": [
+            633.0310668945312,
+            76.73932647705078,
+            850.9528198242188,
+            123.88558197021484
+          ]
+        }
+      ]
+    },
+    {
+      "image_id": 50,
+      "representative_id": 13,
+      "instance_ids": [
+        13,
+        14
+      ],
+      "selected_instance_id": 13,
+      "selection_status": "SELECTED_FOR_READING_ONLY",
+      "grouping_scope": "SHARED_MASK_ROLE_HYPOTHESIS; not verified physical identity",
+      "grouping_evidence": [
+        {
+          "instance_ids": [
+            13,
+            14
+          ],
+          "bbox_iou": 0.9668689681403749,
+          "mask_iou": 0.9878827935668649,
+          "mask_intersection": 4484,
+          "mask_areas": [
+            4519,
+            4504
+          ]
+        }
+      ],
+      "alternatives": [
+        {
+          "instance_id": 13,
+          "class_label": "ina_pa",
+          "category_id": 7,
+          "score": 0.6872750520706177,
+          "bbox_xyxy": [
+            927.4728393554688,
+            205.3430633544922,
+            1096.23388671875,
+            247.8510284423828
+          ]
+        },
+        {
+          "instance_id": 14,
+          "class_label": "anak_haminsaran",
+          "category_id": 23,
+          "score": 0.6320131421089172,
+          "bbox_xyxy": [
+            927.91650390625,
+            204.2090301513672,
+            1096.12060546875,
+            248.0328369140625
+          ]
+        }
+      ]
+    },
+    {
+      "image_id": 53,
+      "representative_id": 11,
+      "instance_ids": [
+        11,
+        12
+      ],
+      "selected_instance_id": 11,
+      "selection_status": "SELECTED_FOR_READING_ONLY",
+      "grouping_scope": "SHARED_MASK_ROLE_HYPOTHESIS; not verified physical identity",
+      "grouping_evidence": [
+        {
+          "instance_ids": [
+            11,
+            12
+          ],
+          "bbox_iou": 0.9108106881371443,
+          "mask_iou": 0.9220355372899794,
+          "mask_intersection": 7628,
+          "mask_areas": [
+            7892,
+            8009
+          ]
+        }
+      ],
+      "alternatives": [
+        {
+          "instance_id": 11,
+          "class_label": "ina_sa",
+          "category_id": 14,
+          "score": 0.9473768472671509,
+          "bbox_xyxy": [
+            652.1138916015625,
+            21.479217529296875,
+            842.4092407226562,
+            183.05369567871094
+          ]
+        },
+        {
+          "instance_id": 12,
+          "class_label": "anak_sihora",
+          "category_id": 21,
+          "score": 0.5973548889160156,
+          "bbox_xyxy": [
+            645.7510375976562,
+            19.655576705932617,
+            849.4143676757812,
+            180.60182189941406
+          ]
+        }
+      ]
+    },
+    {
+      "image_id": 59,
+      "representative_id": 8,
+      "instance_ids": [
+        8,
+        11,
+        12
+      ],
+      "selected_instance_id": 8,
+      "selection_status": "SELECTED_FOR_READING_ONLY",
+      "grouping_scope": "SHARED_MASK_ROLE_HYPOTHESIS; not verified physical identity",
+      "grouping_evidence": [
+        {
+          "instance_ids": [
+            8,
+            11
+          ],
+          "bbox_iou": 0.3161783289367855,
+          "mask_iou": 0.5425178147268409,
+          "mask_intersection": 5710,
+          "mask_areas": [
+            10206,
+            6029
+          ]
+        },
+        {
+          "instance_ids": [
+            8,
+            12
+          ],
+          "bbox_iou": 0.3847697866465173,
+          "mask_iou": 0.5395023181001041,
+          "mask_intersection": 5702,
+          "mask_areas": [
+            10206,
+            6065
+          ]
+        },
+        {
+          "instance_ids": [
+            11,
+            12
+          ],
+          "bbox_iou": 0.8025484534318406,
+          "mask_iou": 0.9722765818656229,
+          "mask_intersection": 5962,
+          "mask_areas": [
+            6029,
+            6065
+          ]
+        }
+      ],
+      "alternatives": [
+        {
+          "instance_id": 8,
+          "class_label": "ina_na",
+          "category_id": 3,
+          "score": 0.9842139482498169,
+          "bbox_xyxy": [
+            28.283653259277344,
+            100.01019287109375,
+            361.42193603515625,
+            233.60398864746094
+          ]
+        },
+        {
+          "instance_id": 11,
+          "class_label": "anak_hatadingan",
+          "category_id": 19,
+          "score": 0.8525798916816711,
+          "bbox_xyxy": [
+            21.345409393310547,
+            99.87567901611328,
+            292.3508605957031,
+            153.78848266601562
+          ]
+        },
+        {
+          "instance_id": 12,
+          "class_label": "ina_pa",
+          "category_id": 7,
+          "score": 0.8333603143692017,
+          "bbox_xyxy": [
+            19.245277404785156,
+            99.33274841308594,
+            292.8117370605469,
+            165.88087463378906
+          ]
+        }
+      ]
+    },
+    {
+      "image_id": 60,
+      "representative_id": 9,
+      "instance_ids": [
+        9,
+        11
+      ],
+      "selected_instance_id": 9,
+      "selection_status": "SELECTED_FOR_READING_ONLY",
+      "grouping_scope": "SHARED_MASK_ROLE_HYPOTHESIS; not verified physical identity",
+      "grouping_evidence": [
+        {
+          "instance_ids": [
+            9,
+            11
+          ],
+          "rule": "CONTAINED_ANAK_IN_INA_MASK",
+          "bbox_iou": 0.08341665486643521,
+          "bbox_containment": 1.0,
+          "mask_containment": 0.9724604966139955,
+          "mask_iou": 0.18448098663926002,
+          "mask_intersection": 2154,
+          "mask_areas": [
+            11615,
+            2215
+          ]
+        }
+      ],
+      "alternatives": [
+        {
+          "instance_id": 9,
+          "class_label": "ina_ya",
+          "category_id": 15,
+          "score": 0.8513063788414001,
+          "bbox_xyxy": [
+            1847.4534912109375,
+            162.5769805908203,
+            2090.954345703125,
+            324.8516540527344
+          ]
+        },
+        {
+          "instance_id": 11,
+          "class_label": "anak_hatadingan",
+          "category_id": 19,
+          "score": 0.707331120967865,
+          "bbox_xyxy": [
+            1850.8780517578125,
+            163.9564666748047,
+            1941.1580810546875,
+            200.4665069580078
+          ]
+        }
+      ]
+    },
+    {
+      "image_id": 66,
+      "representative_id": 10,
+      "instance_ids": [
+        10,
+        11
+      ],
+      "selected_instance_id": 10,
+      "selection_status": "SELECTED_FOR_READING_ONLY",
+      "grouping_scope": "SHARED_MASK_ROLE_HYPOTHESIS; not verified physical identity",
+      "grouping_evidence": [
+        {
+          "instance_ids": [
+            10,
+            11
+          ],
+          "bbox_iou": 0.38371736951413077,
+          "mask_iou": 0.5378486055776892,
+          "mask_intersection": 135,
+          "mask_areas": [
+            144,
+            242
+          ]
+        }
+      ],
+      "alternatives": [
+        {
+          "instance_id": 10,
+          "class_label": "anak_hatadingan",
+          "category_id": 19,
+          "score": 0.8317737579345703,
+          "bbox_xyxy": [
+            26.799938201904297,
+            106.51883697509766,
+            60.903648376464844,
+            123.15043640136719
+          ]
+        },
+        {
+          "instance_id": 11,
+          "class_label": "ina_da",
+          "category_id": 11,
+          "score": 0.7034775018692017,
+          "bbox_xyxy": [
+            26.599502563476562,
+            107.71125793457031,
+            60.807613372802734,
+            146.47918701171875
+          ]
+        }
+      ]
+    },
+    {
+      "image_id": 69,
+      "representative_id": 26,
+      "instance_ids": [
+        26,
+        30
+      ],
+      "selected_instance_id": 26,
+      "selection_status": "SELECTED_FOR_READING_ONLY",
+      "grouping_scope": "SHARED_MASK_ROLE_HYPOTHESIS; not verified physical identity",
+      "grouping_evidence": [
+        {
+          "instance_ids": [
+            26,
+            30
+          ],
+          "bbox_iou": 0.9387254127792107,
+          "mask_iou": 0.9156118143459916,
+          "mask_intersection": 217,
+          "mask_areas": [
+            234,
+            220
+          ]
+        }
+      ],
+      "alternatives": [
+        {
+          "instance_id": 26,
+          "class_label": "ina_ga",
+          "category_id": 9,
+          "score": 0.8150110244750977,
+          "bbox_xyxy": [
+            408.5143127441406,
+            130.8480682373047,
+            441.2187194824219,
+            162.13174438476562
+          ]
+        },
+        {
+          "instance_id": 30,
+          "class_label": "anak_haborotan",
+          "category_id": 22,
+          "score": 0.6730585098266602,
+          "bbox_xyxy": [
+            407.8033142089844,
+            131.60528564453125,
+            441.2131042480469,
+            161.58912658691406
+          ]
+        }
+      ]
+    },
+    {
+      "image_id": 70,
+      "representative_id": 29,
+      "instance_ids": [
+        29,
+        30
+      ],
+      "selected_instance_id": 29,
+      "selection_status": "SELECTED_FOR_READING_ONLY",
+      "grouping_scope": "SHARED_MASK_ROLE_HYPOTHESIS; not verified physical identity",
+      "grouping_evidence": [
+        {
+          "instance_ids": [
+            29,
+            30
+          ],
+          "bbox_iou": 0.8692368055622764,
+          "mask_iou": 0.9408450704225352,
+          "mask_intersection": 334,
+          "mask_areas": [
+            348,
+            341
+          ]
+        }
+      ],
+      "alternatives": [
+        {
+          "instance_id": 29,
+          "class_label": "anak_sihora",
+          "category_id": 21,
+          "score": 0.666779100894928,
+          "bbox_xyxy": [
+            157.08786010742188,
+            105.85929870605469,
+            186.85215759277344,
+            154.5213623046875
+          ]
+        },
+        {
+          "instance_id": 30,
+          "class_label": "ina_sa",
+          "category_id": 14,
+          "score": 0.5779948234558105,
+          "bbox_xyxy": [
+            158.34426879882812,
+            107.4180679321289,
+            185.50584411621094,
+            153.77015686035156
+          ]
+        }
+      ]
+    },
+    {
+      "image_id": 70,
+      "representative_id": 26,
+      "instance_ids": [
+        26,
+        32
+      ],
+      "selected_instance_id": 26,
+      "selection_status": "SELECTED_FOR_READING_ONLY",
+      "grouping_scope": "SHARED_MASK_ROLE_HYPOTHESIS; not verified physical identity",
+      "grouping_evidence": [
+        {
+          "instance_ids": [
+            26,
+            32
+          ],
+          "bbox_iou": 0.9326254899822263,
+          "mask_iou": 0.9253112033195021,
+          "mask_intersection": 223,
+          "mask_areas": [
+            232,
+            232
+          ]
+        }
+      ],
+      "alternatives": [
+        {
+          "instance_id": 26,
+          "class_label": "ina_da",
+          "category_id": 11,
+          "score": 0.8004487752914429,
+          "bbox_xyxy": [
+            264.42559814453125,
+            33.68861770629883,
+            301.8241882324219,
+            67.90412139892578
+          ]
+        },
+        {
+          "instance_id": 32,
+          "class_label": "anak_sihora",
+          "category_id": 21,
+          "score": 0.518165647983551,
+          "bbox_xyxy": [
+            264.0461730957031,
+            33.62440490722656,
+            300.8481140136719,
+            69.0259780883789
+          ]
+        }
+      ]
+    },
+    {
+      "image_id": 70,
+      "representative_id": 2,
+      "instance_ids": [
+        2,
+        31
+      ],
+      "selected_instance_id": 2,
+      "selection_status": "SELECTED_FOR_READING_ONLY",
+      "grouping_scope": "SHARED_MASK_ROLE_HYPOTHESIS; not verified physical identity",
+      "grouping_evidence": [
+        {
+          "instance_ids": [
+            2,
+            31
+          ],
+          "rule": "CONTAINED_ANAK_IN_INA_MASK",
+          "bbox_iou": 0.11888042397458681,
+          "bbox_containment": 0.9702162789853758,
+          "mask_containment": 0.9145299145299145,
+          "mask_iou": 0.2276595744680851,
+          "mask_intersection": 107,
+          "mask_areas": [
+            460,
+            117
+          ]
+        }
+      ],
+      "alternatives": [
+        {
+          "instance_id": 2,
+          "class_label": "ina_na",
+          "category_id": 3,
+          "score": 0.9992353916168213,
+          "bbox_xyxy": [
+            392.1781311035156,
+            28.5975399017334,
+            433.8609313964844,
+            71.61473083496094
+          ]
+        },
+        {
+          "instance_id": 31,
+          "class_label": "anak_hatadingan",
+          "category_id": 19,
+          "score": 0.5379225015640259,
+          "bbox_xyxy": [
+            391.27642822265625,
+            28.64535140991211,
+            421.55145263671875,
+            35.928916931152344
+          ]
+        }
+      ]
+    },
+    {
+      "image_id": 71,
+      "representative_id": 17,
+      "instance_ids": [
+        17,
+        20
+      ],
+      "selected_instance_id": 17,
+      "selection_status": "SELECTED_FOR_READING_ONLY",
+      "grouping_scope": "SHARED_MASK_ROLE_HYPOTHESIS; not verified physical identity",
+      "grouping_evidence": [
+        {
+          "instance_ids": [
+            17,
+            20
+          ],
+          "bbox_iou": 0.9589352314519065,
+          "mask_iou": 0.9625550660792952,
+          "mask_intersection": 437,
+          "mask_areas": [
+            445,
+            446
+          ]
+        }
+      ],
+      "alternatives": [
+        {
+          "instance_id": 17,
+          "class_label": "anak_sihora",
+          "category_id": 21,
+          "score": 0.8236328959465027,
+          "bbox_xyxy": [
+            59.44639587402344,
+            95.39827728271484,
+            96.75115203857422,
+            128.6839141845703
+          ]
+        },
+        {
+          "instance_id": 20,
+          "class_label": "ina_sa",
+          "category_id": 14,
+          "score": 0.6095849275588989,
+          "bbox_xyxy": [
+            58.34879684448242,
+            95.64691925048828,
+            96.61912536621094,
+            128.61245727539062
+          ]
+        }
+      ]
+    },
+    {
+      "image_id": 71,
+      "representative_id": 18,
+      "instance_ids": [
+        18,
+        19
+      ],
+      "selected_instance_id": 18,
+      "selection_status": "SELECTED_FOR_READING_ONLY",
+      "grouping_scope": "SHARED_MASK_ROLE_HYPOTHESIS; not verified physical identity",
+      "grouping_evidence": [
+        {
+          "instance_ids": [
+            18,
+            19
+          ],
+          "bbox_iou": 0.9080689858522095,
+          "mask_iou": 0.9444444444444444,
+          "mask_intersection": 340,
+          "mask_areas": [
+            351,
+            349
+          ]
+        }
+      ],
+      "alternatives": [
+        {
+          "instance_id": 18,
+          "class_label": "ina_sa",
+          "category_id": 14,
+          "score": 0.8106079697608948,
+          "bbox_xyxy": [
+            210.11312866210938,
+            12.695903778076172,
+            246.48451232910156,
+            49.17567443847656
+          ]
+        },
+        {
+          "instance_id": 19,
+          "class_label": "anak_sihora",
+          "category_id": 21,
+          "score": 0.731575071811676,
+          "bbox_xyxy": [
+            209.86355590820312,
+            11.44539737701416,
+            247.66412353515625,
+            48.27162551879883
+          ]
+        }
+      ]
+    },
+    {
+      "image_id": 89,
+      "representative_id": 9,
+      "instance_ids": [
+        9,
+        13
+      ],
+      "selected_instance_id": 9,
+      "selection_status": "SELECTED_FOR_READING_ONLY",
+      "grouping_scope": "SHARED_MASK_ROLE_HYPOTHESIS; not verified physical identity",
+      "grouping_evidence": [
+        {
+          "instance_ids": [
+            9,
+            13
+          ],
+          "bbox_iou": 0.866110374583336,
+          "mask_iou": 0.9128014842300557,
+          "mask_intersection": 492,
+          "mask_areas": [
+            505,
+            526
+          ]
+        }
+      ],
+      "alternatives": [
+        {
+          "instance_id": 9,
+          "class_label": "anak_hauluan",
+          "category_id": 20,
+          "score": 0.9677714109420776,
+          "bbox_xyxy": [
+            478.8258056640625,
+            59.680152893066406,
+            524.17431640625,
+            99.7261962890625
+          ]
+        },
+        {
+          "instance_id": 13,
+          "class_label": "ina_na",
+          "category_id": 3,
+          "score": 0.5584031343460083,
+          "bbox_xyxy": [
+            477.3285827636719,
+            56.53076171875,
+            522.5327758789062,
+            99.67489624023438
+          ]
+        }
+      ]
+    },
+    {
+      "image_id": 99,
+      "representative_id": 10,
+      "instance_ids": [
+        10,
+        11
+      ],
+      "selected_instance_id": 10,
+      "selection_status": "SELECTED_FOR_READING_ONLY",
+      "grouping_scope": "SHARED_MASK_ROLE_HYPOTHESIS; not verified physical identity",
+      "grouping_evidence": [
+        {
+          "instance_ids": [
+            10,
+            11
+          ],
+          "bbox_iou": 0.8466522521645181,
+          "mask_iou": 0.9308176100628931,
+          "mask_intersection": 444,
+          "mask_areas": [
+            450,
+            471
+          ]
+        }
+      ],
+      "alternatives": [
+        {
+          "instance_id": 10,
+          "class_label": "anak_hauluan",
+          "category_id": 20,
+          "score": 0.9052848815917969,
+          "bbox_xyxy": [
+            633.341064453125,
+            58.2933464050293,
+            672.5379028320312,
+            96.79962921142578
+          ]
+        },
+        {
+          "instance_id": 11,
+          "class_label": "ina_na",
+          "category_id": 3,
+          "score": 0.6071668267250061,
+          "bbox_xyxy": [
+            631.5040283203125,
+            55.275123596191406,
+            671.1417846679688,
+            96.34405517578125
+          ]
+        }
+      ]
+    }
+  ],
+  "distinct_matched_gt_group_conflicts": [],
+  "reference_regressions": [],
+  "coordinate_order_checks": 655,
+  "invariance_failures": [],
+  "all_visible_ids_preserved": true,
+  "all_predictions_unchanged": true,
+  "presentation_has_no_question_mark": true,
+  "remaining_unresolved_image_ids": [
+    30,
+    68,
+    70,
+    124
+  ],
+  "source_hashes": {
+    "/mnt/d/SKRIPSIJONATHAN/PROGRAM/02_AKSARABATAKTOBA_TERBARU/eksperimen/DATASET/testing/instances.json": "4c1a7646f9140708196d0ef79ca51638e43c5c3a9d98d5ca6f544d2f701d41c5",
+    "/mnt/d/SKRIPSIJONATHAN/PROGRAM/02_AKSARABATAKTOBA_TERBARU/eksperimen/hasil_evaluasi_R50_30epoch/predictions.json": "dfd732477190e09fc1665e98cf114df57b6ec4de89662de9713e0a0fe8e2a749",
+    "/mnt/d/SKRIPSIJONATHAN/PROGRAM/02_AKSARABATAKTOBA_TERBARU/eksperimen/hasil_evaluasi_R50_30epoch/metrik_instansi.json": "91390df9e0393f8fd2393453402fbfafd1807c3149c5d92a0c3088ce8afc1cab",
+    "/mnt/d/SKRIPSIJONATHAN/PROGRAM/02_AKSARABATAKTOBA_TERBARU/eksperimen/hasil_evaluasi_R50_30epoch/ringkasan.json": "fcd9cf5c8a58f91e638483eda69bd940098f52c89cca8c225858622c58f217df",
+    "/mnt/d/SKRIPSIJONATHAN/PROGRAM/02_AKSARABATAKTOBA_TERBARU/model/identitas.json": "4e4ab79300b01fa00eaf2915a7ff7e180e9681fe5d011bb3a7bc654400a66d26",
+    "/mnt/d/SKRIPSIJONATHAN/PROGRAM/02_AKSARABATAKTOBA_TERBARU/aplikasi/backend.py": "f0f2917a639c1b25e37e0d56898621d798b01a91c097f4dcbf64e747d5632d59",
+    "/mnt/d/SKRIPSIJONATHAN/PROGRAM/03_PENGEMBANGAN_TRANSLITERASI/01_ATURAN/peta_aksara.json": "6cab2a65915bf175361ce248e77789ff39b9c0a61c7e40a2700b6178862e63e4",
+    "/mnt/d/SKRIPSIJONATHAN/PROGRAM/03_PENGEMBANGAN_TRANSLITERASI/02_MODUL_TRANSLITERASI/susun_prediksi.py": "138b6b617a5c17359b9c41acd419ec240882c0e1cbe056748f587e101f887303",
+    "/mnt/d/SKRIPSIJONATHAN/PROGRAM/03_PENGEMBANGAN_TRANSLITERASI/02_MODUL_TRANSLITERASI/transliterasi.py": "f8753908dc793967ce9269374df9e77625daa52174f8e24d277a80f567449ee5",
+    "/mnt/d/SKRIPSIJONATHAN/PROGRAM/03_PENGEMBANGAN_TRANSLITERASI/04_PENGUJIAN/uji_konflik_peran.py": "a295d866cb53d9f141663343b83ceb430af42d0e99df374a8ececcf196e0c63a",
+    "/mnt/d/SKRIPSIJONATHAN/PROGRAM/03_PENGEMBANGAN_TRANSLITERASI/04_PENGUJIAN/uji_kandidat_anak.py": "65e3c75fe6f1179b4cdcc98b47eccaae3a7fe58af529a5ca176fefa908359bad",
+    "/mnt/d/SKRIPSIJONATHAN/PROGRAM/03_PENGEMBANGAN_TRANSLITERASI/05_HASIL/TAHAP_15_AUDIT_TRANSLITERASI_051/audit.py": "01b78756ff524c95e776e5529ebfb7e231fdf15330ac73ad6f96cce0183ac5f1",
+    "/mnt/d/SKRIPSIJONATHAN/PROGRAM/04_WEB_APP_BATAK_TOBA/src/utils/transliterationAdapter.js": "8b79fb8895cf590faf29c62029daf8fe2feaa0b5dbec00858fa678a4aea4bbf0",
+    "/mnt/d/SKRIPSIJONATHAN/PROGRAM/04_WEB_APP_BATAK_TOBA/src/pages/PublicReaderPage.jsx": "587acf24e3c9e599971758198242d98ca04f4dbfd71f34c63f15c27561b2d4c7",
+    "/mnt/d/SKRIPSIJONATHAN/PROGRAM/04_WEB_APP_BATAK_TOBA/src/pages/ResearchPage.jsx": "8a526bb8ce62d3d5afa95ff27c1011c573febb81831512a5d0b680f27129ec41",
+    "/mnt/d/SKRIPSIJONATHAN/PROGRAM/04_WEB_APP_BATAK_TOBA/src/pages/HistoryPage.jsx": "3220b5e82fad08b436a439220f815cc54827fb061d2cc58580d627899e3a68a8"
+  },
+  "sources_unchanged_during_audit": true,
+  "development_cer_before": {
+    "S": 45,
+    "D": 22,
+    "I": 14,
+    "C": 996,
+    "N": 1063,
+    "errors": 81,
+    "cer": 0.0761994355597366,
+    "cer_percent": 7.619943555973659,
+    "images": 131,
+    "exact_text_matches": 96
+  },
+  "development_cer_after": {
+    "S": 40,
+    "D": 21,
+    "I": 9,
+    "C": 1002,
+    "N": 1063,
+    "errors": 70,
+    "cer": 0.0658513640639699,
+    "cer_percent": 6.585136406396989,
+    "images": 131,
+    "exact_text_matches": 97
+  },
+  "scope": "Exposed testing, provisional PDF reference; CER uses diagnostic text, never formatted presentation. Coordinate checks transform bbox only, not new experiments.",
+  "training": false,
+  "new_inference": false
+}
