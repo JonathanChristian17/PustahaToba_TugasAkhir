@@ -25,6 +25,10 @@ COPY 01_model ./01_model
 COPY 02_transliteration ./02_transliteration
 COPY 03_web_app ./03_web_app
 
+# Jika runner build (seperti Cloud Build) tidak menjalankan git lfs pull, unduh bobot R50 langsung
+RUN python -c "import os, urllib.request; p='01_model/eksperimen/hasil_train_R50/model_best.pth'; \
+    urllib.request.urlretrieve('https://media.githubusercontent.com/media/JonathanChristian17/PustahaToba_TugasAkhir/main/01_model/eksperimen/hasil_train_R50/model_best.pth', p) if (not os.path.exists(p) or os.path.getsize(p) < 1000000) else None"
+
 EXPOSE 7860
 
 CMD ["python", "03_web_app/jalankan_api.py"]
