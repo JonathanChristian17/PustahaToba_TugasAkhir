@@ -34,7 +34,7 @@ from transliterasi import Transliterator  # noqa: E402
 from collections import OrderedDict  # noqa: E402
 
 HOST = os.environ.get("PUSTAHA_API_HOST", "127.0.0.1")
-PORT = int(os.environ.get("PUSTAHA_API_PORT", "8503"))
+PORT = int(os.environ.get("PORT") or os.environ.get("PUSTAHA_API_PORT", "8503"))
 _PREDICTOR = None
 _PREDICTOR_LOCK = threading.Lock()
 _RENDER_CACHE: OrderedDict[str, dict] = OrderedDict()
@@ -58,6 +58,31 @@ def _cache_put(key: str, rgb: np.ndarray, items: list[dict]) -> None:
             _RENDER_CACHE.popitem(last=False)
 
 
+def _load_sample_adapted(image_id: int) -> list[dict]:
+    meta_path = PACKAGE_02 / "eksperimen/DATASET/testing/instances.json"
+    if not meta_path.is_file():
+        meta_path = PACKAGE_02 / "eksperimen/hasil_evaluasi_R50_30epoch/instances_acuan.json"
+    meta = json.loads(meta_path.read_text(encoding="utf-8"))
+    preds = json.loads(
+        (PACKAGE_02 / "eksperimen/hasil_evaluasi_R50_30epoch/predictions.json").read_text(encoding="utf-8")
+    )
+    names = {c["id"]: c["name"] for c in meta["categories"]}
+    testing_dir = DEV_03 / "04_PENGUJIAN"
+    if str(testing_dir) not in sys.path:
+        sys.path.insert(0, str(testing_dir))
+    from uji_testing_tersimpan import adapt_predictions  # noqa: E402
+
+    raw_pairs = [(i, p) for i, p in enumerate(preds) if p["image_id"] == image_id]
+    adapted = adapt_predictions(raw_pairs, names)
+    num = 0
+    for item, (_, orig) in zip(adapted, raw_pairs):
+        item["segmentation"] = orig.get("segmentation")
+        if item["displayed"]:
+            num += 1
+            item["display_number"] = num
+    return adapted
+
+
 def _get_render_entry(cache_key: str) -> dict | None:
     with _RENDER_LOCK:
         if cache_key in _RENDER_CACHE:
@@ -67,28 +92,7 @@ def _get_render_entry(cache_key: str) -> dict | None:
         image_id, img_path = _SAMPLE_MAP[cache_key]
         if img_path.is_file():
             rgb = pkg02_backend.decode_upload(img_path.read_bytes())
-            meta = json.loads(
-                (PACKAGE_02 / "eksperimen/DATASET/testing/instances.json").read_text(encoding="utf-8")
-            )
-            preds = json.loads(
-                (PACKAGE_02 / "eksperimen/hasil_evaluasi_R50_30epoch/predictions.json").read_text(
-                    encoding="utf-8"
-                )
-            )
-            names = {c["id"]: c["name"] for c in meta["categories"]}
-            testing_dir = DEV_03 / "04_PENGUJIAN"
-            if str(testing_dir) not in sys.path:
-                sys.path.insert(0, str(testing_dir))
-            from uji_testing_tersimpan import adapt_predictions  # noqa: E402
-
-            raw_pairs = [(i, p) for i, p in enumerate(preds) if p["image_id"] == image_id]
-            adapted = adapt_predictions(raw_pairs, names)
-            num = 0
-            for item, (_, orig) in zip(adapted, raw_pairs):
-                item["segmentation"] = orig.get("segmentation")
-                if item["displayed"]:
-                    num += 1
-                    item["display_number"] = num
+            adapted = _load_sample_adapted(image_id)
             visible = [it for it in adapted if it["displayed"]]
             _cache_put(cache_key, rgb, visible)
             return _RENDER_CACHE.get(cache_key)
@@ -266,6 +270,18 @@ class PustahaApiHandler(BaseHTTPRequestHandler):
         self.end_headers()
 
     def do_GET(self):
+        if self.path == "/":
+            _json_response(
+                self,
+                HTTPStatus.OK,
+                {
+                    "ok": True,
+                    "service": "pustaha-toba-api",
+                    "health": "/api/health",
+                    "module_version": susun_prediksi.VERSION,
+                },
+            )
+            return
         if self.path == "/api/health":
             plan, _names = pkg02_backend.verify_artifacts()
             _json_response(
@@ -323,28 +339,7 @@ class PustahaApiHandler(BaseHTTPRequestHandler):
                 image_id, img_path = _SAMPLE_MAP[sample_id]
                 img_bytes = img_path.read_bytes()
                 rgb = pkg02_backend.decode_upload(img_bytes)
-                meta = json.loads(
-                    (PACKAGE_02 / "eksperimen/DATASET/testing/instances.json").read_text(encoding="utf-8")
-                )
-                preds = json.loads(
-                    (PACKAGE_02 / "eksperimen/hasil_evaluasi_R50_30epoch/predictions.json").read_text(
-                        encoding="utf-8"
-                    )
-                )
-                names = {c["id"]: c["name"] for c in meta["categories"]}
-                testing_dir = DEV_03 / "04_PENGUJIAN"
-                if str(testing_dir) not in sys.path:
-                    sys.path.insert(0, str(testing_dir))
-                from uji_testing_tersimpan import adapt_predictions  # noqa: E402
-
-                raw_pairs = [(i, p) for i, p in enumerate(preds) if p["image_id"] == image_id]
-                adapted = adapt_predictions(raw_pairs, names)
-                num = 0
-                for item, (_, orig) in zip(adapted, raw_pairs):
-                    item["segmentation"] = orig.get("segmentation")
-                    if item["displayed"]:
-                        num += 1
-                        item["display_number"] = num
+                adapted = _load_sample_adapted(image_id)
                 raw_doc = {
                     "schema_version": 1,
                     "source_name": img_path.name,

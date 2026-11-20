@@ -4,6 +4,7 @@ import hashlib
 import io
 import json
 import math
+import os
 import sys
 import threading
 import time
@@ -90,8 +91,15 @@ class Predictor:
         import torch
         from detectron2.modeling import build_model
         self.plan, self.names = verify_artifacts()
-        if not torch.cuda.is_available():
-            raise RuntimeError("GPU CUDA belum tersedia. Gunakan environment penelitian pada WSL.")
+        requested_device = os.environ.get("PUSTAHA_DEVICE", "auto").strip().lower()
+        if requested_device == "cuda" and not torch.cuda.is_available():
+            raise RuntimeError("GPU CUDA belum tersedia. Gunakan environment penelitian pada WSL atau set PUSTAHA_DEVICE=cpu.")
+        if requested_device == "cpu":
+            self.device = "cpu"
+        elif requested_device == "cuda":
+            self.device = "cuda"
+        else:
+            self.device = "cuda" if torch.cuda.is_available() else "cpu"
         sys.path.insert(0, str(PACKAGE / "model/kode"))
         from normalisasi_model import config
         from resize_augmentasi import inference_input
@@ -102,7 +110,7 @@ class Predictor:
         self.model = build_model(config(self.plan, device="cpu"))
         self.model.load_state_dict(checkpoint["model"], strict=True)
         del checkpoint
-        self.model.to("cuda").eval()
+        self.model.to(self.device).eval()
         blocks = tuple(len(getattr(self.model.backbone.bottom_up, f"res{i}")) for i in range(2,6))
         if blocks != (3,4,6,3):
             raise ValueError("Backbone termuat bukan ResNet-50.")
@@ -111,7 +119,7 @@ class Predictor:
                                "training_run":"Aksarabataktoba_30_epoch_R50"}
         self.prepare = inference_input
         self.lock = threading.Lock()
-        self.gpu = torch.cuda.get_device_name(0)
+        self.gpu = torch.cuda.get_device_name(0) if self.device == "cuda" else "CPU"
 
     def predict(self, rgb, source_name, source_hash):
         import torch
@@ -120,11 +128,13 @@ class Predictor:
             sample = self.prepare(rgb, 0, self.plan)
             if "instances" in sample or "annotations" in sample:
                 raise RuntimeError("Input inferensi mengandung anotasi.")
-            torch.cuda.synchronize()
+            if self.device == "cuda":
+                torch.cuda.synchronize()
             start = time.perf_counter()
             with torch.inference_mode():
                 instances = self.model([sample])[0]["instances"].to("cpu")
-            torch.cuda.synchronize()
+            if self.device == "cuda":
+                torch.cuda.synchronize()
             elapsed = time.perf_counter() - start
         if instances.image_size != rgb.shape[:2]:
             raise RuntimeError("Ukuran mask keluaran tidak sama dengan input.")
