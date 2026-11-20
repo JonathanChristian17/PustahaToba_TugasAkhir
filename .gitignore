@@ -1,5 +1,6 @@
-# Bobot model >100 MB (simpan di GitHub Releases)
+# Bobot model besar lainnya diabaikan; model utama R50 disimpan via Git LFS
 *.pth
+!01_model/eksperimen/hasil_train_R50/model_best.pth
 *.pt
 *.ckpt
 

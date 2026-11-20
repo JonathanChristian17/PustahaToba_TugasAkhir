@@ -1,0 +1,1 @@
+01_model/eksperimen/hasil_train_R50/model_best.pth filter=lfs diff=lfs merge=lfs -text

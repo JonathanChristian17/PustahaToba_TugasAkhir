@@ -10,9 +10,13 @@ Repositori dokumentasi kode penelitian skripsi oleh **Jonathan C. Amadeo Sembiri
 
 ## Bobot Model (Checkpoint)
 
-Berkas bobot model `model_best.pth` (`168,5 MB` untuk ResNet-50-FPN Epoch 28) melebihi batas ukuran berkas `100 MB` di GitHub, sehingga disediakan melalui halaman **GitHub Releases** pada repositori ini.
+Berkas bobot model `01_model/eksperimen/hasil_train_R50/model_best.pth` (`168,54 MB` untuk ResNet-50-FPN Epoch 28) disimpan langsung menggunakan **Git LFS** di repositori ini.
 
-Setelah mengunduh, letakkan berkas bobot sesuai konfigurasi `01_model/model/identitas.json` sebelum menjalankan inferensi backend.
+Jika melakukan `git clone`, pastikan `git-lfs` aktif agar bobot model ikut terunduh:
+```bash
+git lfs install
+git lfs pull
+```
 
 ## Cara Menjalankan Lokal
 
